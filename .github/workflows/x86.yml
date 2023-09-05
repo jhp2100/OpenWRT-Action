@@ -1,11 +1,11 @@
 #
-# Copyright (c) 2021 F-T-Otaku
+# Copyright (c) 2023 Lex
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-# https://github.com/F-T-Otaku/Actions-OtakuWrt
-# Description: Build OpenWrt for x86/R2S/Pi4/acrh17 using GitHub Actions
+# https://github.com/HEXtoDEC/OpenWRT-Actions
+# Description: Build OpenWrt using GitHub Actions
 #
 
 name: Build OpenWrt-X86

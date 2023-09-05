@@ -4,11 +4,11 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-# https://github.com/HEXtoDEC/Actions-OpenWRT
-# Description: Build OpenWrt for R5S using GitHub Actions
+# https://github.com/HEXtoDEC/OpenWRT-Actions
+# Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt-R5S
+name: Build OpenWrt-ARMv8
 
 on:
   repository_dispatch:
