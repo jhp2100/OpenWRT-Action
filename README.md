@@ -1,8 +1,8 @@
 # Action-WRT编译说明
 
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/HEXtoDEC/Actions-OtakuWrt/blob/main/LICENSE)
-![GitHub Stars](https://img.shields.io/github/stars/HEXtoDEC/OpenWRT-Actions.svg?style=flat-square&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/HEXtoDEC/OpenWRT-Actions.svg?style=flat-square&label=Forks&logo=github)
+![GitHub Stars](https://img.shields.io/github/stars/HEXtoDEC/OpenWRT-Action.svg?style=flat-square&label=Stars&logo=github)
+![GitHub Forks](https://img.shields.io/github/forks/HEXtoDEC/OpenWRT-Action.svg?style=flat-square&label=Forks&logo=github)
 
 ## 说明
 
