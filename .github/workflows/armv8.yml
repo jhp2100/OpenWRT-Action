@@ -8,24 +8,29 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt-ARMv8
+name: Build OpenWrt-ARM
 
 on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
       ssh:
-        description: "SSH connection to Actions"
+        description: 'SSH connection to Actions'
         required: false
-        default: "false"
+        default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede  # New repository URL
-  REPO_BRANCH: master  # Branch to use
-  CONFIG_FILE: SEED/ARMv8/seed.config # New config file for ARMv8
-  DIY_P1_SH: SCRIPTS/ARMv8/armv8-part1.sh  # New DIY script part 1
-  DIY_P2_SH: SCRIPTS/ARMv8/armv8-part2.sh  # New DIY script part 2
-  DEVICE_NAME: armv8  # New device name
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
+  FEEDS_CONF: feeds.conf.default
+  CONFIG_FILE: SEED/ARM/seed.config
+  DIY_P1_SH: SCRIPTS/ARM/arm-part1.sh
+  DIY_P2_SH: SCRIPTS/ARM/arm-part2.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
+  UPLOAD_COWTRANSFER: false
+  UPLOAD_WETRANSFER: false
+  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -160,9 +165,9 @@ jobs:
         id: tag
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
         run: |
-          echo "release_tag=$(date +"%Y.%m.%d")-R5S" >> $GITHUB_ENV 
+          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-ARM"
           touch release.txt
-          [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ env.url }})" >> release.txt
+          [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
           [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
           echo "::set-output name=status::success"
 
